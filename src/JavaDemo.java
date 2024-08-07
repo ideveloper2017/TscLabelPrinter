@@ -23,6 +23,11 @@ public class JavaDemo {
         int windowsfont(int x, int y, int fontheight, int rotation, int fontstyle, int fontunderline, String szFaceName, String content);
     }
 
+    public interface DrvLP extends Library{
+        DrvLP INSTANCE=(DrvLP) Native.loadLibrary("DrvLP",DrvLP.class);
+        public void connect();
+    }
+
     public  void print1(){
         System.setProperty("jna.encoding", "GBK");// Support Chinese
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -77,7 +82,14 @@ public class JavaDemo {
     }
 
     public static void main(String[] args) {
-        new JavaDemo().print3();
+        try {
+//            System.load("D:\\JavaProjects\\TscPrinterLabel\\lib\\DrvLP.dll");
+            DrvLP instance = DrvLP.INSTANCE;
+            instance.connect();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+//        new JavaDemo().print3();
     }
 
 

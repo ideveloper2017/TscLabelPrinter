@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jacob" type="repository">
+    <properties maven-id="com.jacob:jacob:1.10" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/jacob/jacob/1.10/jacob-1.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
